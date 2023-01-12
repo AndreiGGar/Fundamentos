@@ -14,7 +14,14 @@ namespace Fundamentos
             // Application.Run(new Form1());
             // Application.Run(new Form01SumarNumeros());
             // Application.Run(new Form02ColoresPosicion());
-            Application.Run(new Form03DiaSemana());
+            // Application.Run(new Form03DiaSemana());
+            // Application.Run(new Form04DateTime());
+            // Application.Run(new Form05Char());
+            // Application.Run(new Form06Email());
+            // Application.Run(new Form07SumarNumeros());
+            // Application.Run(new Form08Colecciones());
+            // Application.Run(new Form09ColeccionMultiple());
+            Application.Run(new Form10Random());
         }
     }
 }
