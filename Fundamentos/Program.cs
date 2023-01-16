@@ -23,7 +23,12 @@ namespace Fundamentos
             // Application.Run(new Form09ColeccionMultiple());
             // Application.Run(new Form10Random());
             // Application.Run(new Form11Productos());
-            Application.Run(new Form12Metodos());
+            // Application.Run(new Form12Metodos());
+            // Application.Run(new Form13ArrayList());
+            // Application.Run(new Form14ListEvents());
+            // Application.Run(new Form15SumarBotones());
+            // Application.Run(new Form16TablaMultiplicar());
+            Application.Run(new Form17Temperaturas());
         }
     }
 }

@@ -69,7 +69,6 @@
             this.add.TabIndex = 2;
             this.add.Text = "Insertar";
             this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // delete
             // 
