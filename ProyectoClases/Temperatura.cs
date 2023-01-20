@@ -8,6 +8,7 @@ namespace ProyectoClases
 {
     public class Temperatura
     {
+        public Temperatura() { }
         public Temperatura(string Mes, int TMax, int TMin)
         {
             this.Mes = Mes;
@@ -18,9 +19,9 @@ namespace ProyectoClases
         public int TMax { get; set; }
         public int TMin { get; set; }
 
-        public int GetMedia ()
+        public float GetMedia ()
         {
-            return (this.TMax + this.TMin) / 2;
+            return (float)(this.TMax + this.TMin) / 2;
         }
     }
 }

@@ -14,18 +14,21 @@ namespace Fundamentos
     public partial class Form19TemperaturaPOO : Form
     {
         string[] months = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
-        int[] temperatures = new int[12];
+        //int[] temperatures = new int[12];
         int i = 0;
+        List<Temperatura> temperaturas;
 
         public Form19TemperaturaPOO()
         {
             InitializeComponent();
+            this.temperaturas = new List<Temperatura>();
         }
 
         private void generar_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-            this.meses.Text = "";
+            this.meses.Items.Clear();
+            this.temperaturas.Clear();
             foreach (string month in months)
             {
                 int temp1 = random.Next(-20, 45);
@@ -33,31 +36,35 @@ namespace Fundamentos
                 if (temp1 > temp2)
                 {
                     Temperatura temp = new(month, temp1, temp2);
-                } else
+                    this.temperaturas.Add(temp);
+                }
+                else
                 {
                     Temperatura temp = new(month, temp2, temp1);
+                    this.temperaturas.Add(temp);
                 }
                 if (temp1 == temp2)
                 {
                     temp1 = random.Next(temp2, 45);
+                    Temperatura temp = new(month, temp1, temp2);
+                    this.temperaturas.Add(temp);
                 }
-                int num = random.Next(-20, 45);
-                this.temperatures[i] = num;
-                this.meses.Text += "\n\n" + month + ": " + num;
+                this.meses.Items.Add(month);
                 i++;
             }
             i = 0;
         }
 
-        private void mostrar_Click(object sender, EventArgs e)
+        private void meses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.min.Text = ""; this.max.Text = ""; this.average.Text = "";
-            int max = this.temperatures.Max();
-            int min = this.temperatures.Min();
-            int average = this.temperatures.Sum() / this.temperatures.Length;
-            this.min.Text = min.ToString();
-            this.max.Text = max.ToString();
-            this.average.Text = average.ToString();
+            if (this.meses.SelectedIndex != -1)
+            {
+                int indice = this.meses.SelectedIndex;
+                Temperatura temp = this.temperaturas[indice];
+                this.max.Text = temp.TMax.ToString();
+                this.min.Text = temp.TMin.ToString();
+                this.average.Text = temp.GetMedia().ToString();
+            }
         }
     }
 }

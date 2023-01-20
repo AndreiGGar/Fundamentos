@@ -34,5 +34,18 @@ namespace Fundamentos
             this.listBox1.Items.Add(persona.GetNombreCompleto());
             this.listBox1.Items.Add(persona.GetNombreCompleto(true));
         }
+
+        private void empleado_Click(object sender, EventArgs e)
+        {
+            // Empleado empleado = new Empleado("Empleado", "XYZ");
+            Empleado empleado = new Empleado();
+            empleado.Nombre = "Empleado";
+            empleado.Apellidos = "Employ";
+            this.listBox1.Items.Add(empleado.GetNombreCompleto() + ", Salario: " + empleado.GetSalarioMinimo());
+            Director director = new Director();
+            director.Nombre = "ABC";
+            director.Apellidos = "ASD";
+            this.listBox1.Items.Add(director.GetNombreCompleto() + ", Salario: " + director.GetSalarioMinimo() + ", Vacaciones: " + director.GetVacaciones());
+        }
     }
 }

@@ -11,7 +11,14 @@ namespace ProyectoClases
     {
         public Persona()
         {
+            Debug.WriteLine("Constructor PERSONA vacío");
             this.DomicilioV = new Direccion("ABC", "XYZ", 28800);
+        }
+        public Persona(string nombre, string apellidos)
+        {
+            Debug.WriteLine("Constructor PERSONA dos params");
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
         }
         #region Campos de propiedad
 
