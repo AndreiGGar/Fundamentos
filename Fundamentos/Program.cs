@@ -29,9 +29,13 @@ namespace Fundamentos
             // Application.Run(new Form15SumarBotones());
             // Application.Run(new Form16TablaMultiplicar());
             // Application.Run(new Form17Temperaturas());
-             Application.Run(new Form18Clases());
+            // Application.Run(new Form18Clases());
             // Application.Run(new Form19TemperaturaPOO());
             // Application.Run(new Form20TemperaturaAnual());
+            // Application.Run(new Form21Files());
+            // Application.Run(new Form22Mascotas());
+            // Application.Run(new Form23XMLObjeto());
+            Application.Run(new Form24XMLCollection());
         }
     }
 }
