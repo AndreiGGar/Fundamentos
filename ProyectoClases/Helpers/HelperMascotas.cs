@@ -10,6 +10,7 @@ namespace ProyectoClases.Helpers
 {
     public class HelperMascotas
     {
+
         public List<Mascota> Mascotas { get; set; }
         public HelperMascotas()
         {
@@ -52,6 +53,18 @@ namespace ProyectoClases.Helpers
         {
             string data = this.GetMascotasString();
             await HelperFiles.WriteFileAsync(path, data);
+        }
+
+        public static byte[] StreamFile(string filename)
+        {
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+            byte[] ImageData = System.IO.File.ReadAllBytes(filename);
+            return ImageData;
+        }
+        public static Stream DevuelveImagen(byte[] imagen)
+        {
+            Stream stream = new MemoryStream(imagen);
+            return stream;
         }
 
     }

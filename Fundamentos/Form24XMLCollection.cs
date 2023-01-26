@@ -1,4 +1,5 @@
-﻿using ProyectoClases.Models;
+﻿using ProyectoClases.Helpers;
+using ProyectoClases.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,10 @@ namespace Fundamentos
             mascota.Nombre = this.name.Text;
             mascota.Raza = this.raza.Text;
             mascota.Age = int.Parse(this.age.Text);
+            string imagen = @"C:\Users\Alumnos MCSD Mañana\Downloads\air.jpg";
+            byte[] byteImagen = HelperMascotas.StreamFile(imagen);
+            // mascota.Image = Image.FromFile(@"C: \Users\Alumnos MCSD Mañana\Downloads\air.jpg");
+            this.pictureBox1.Image = Image.FromStream(HelperMascotas.DevuelveImagen(byteImagen)); ;
             this.coleccionMascotas.Add(mascota);
             this.name.Text = "";
             this.raza.Text = "";
@@ -76,6 +81,11 @@ namespace Fundamentos
             {
                 this.list.Items.Add(mascota.Nombre);
             }
+        }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

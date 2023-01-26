@@ -10,6 +10,8 @@ namespace ProyectoClases.Models
     {
         public string Nombre { get; set; }
         public string Raza { get; set; }
-        public int Age {  get; set; }
+        public int Age { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

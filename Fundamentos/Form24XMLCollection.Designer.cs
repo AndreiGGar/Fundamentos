@@ -39,6 +39,9 @@
             this.list = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.add = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.search = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // age
@@ -138,11 +141,31 @@
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(156, 221);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(117, 101);
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            // 
+            // search
+            // 
+            this.search.Location = new System.Drawing.Point(288, 299);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(83, 23);
+            this.search.TabIndex = 41;
+            this.search.Text = "Examinar...";
+            this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.search_Click);
+            // 
             // Form24XMLCollection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 361);
+            this.Controls.Add(this.search);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.add);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.list);
@@ -156,6 +179,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Form24XMLCollection";
             this.Text = "Form24XMLCollection";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +198,7 @@
         private ListBox list;
         private Label label3;
         private Button add;
+        private PictureBox pictureBox1;
+        private Button search;
     }
 }
