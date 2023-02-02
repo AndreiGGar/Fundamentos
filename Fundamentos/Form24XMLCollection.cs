@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,10 +31,18 @@ namespace Fundamentos
             mascota.Nombre = this.name.Text;
             mascota.Raza = this.raza.Text;
             mascota.Age = int.Parse(this.age.Text);
-            string imagen = @"C:\Users\Alumnos MCSD Mañana\Downloads\air.jpg";
-            byte[] byteImagen = HelperMascotas.StreamFile(imagen);
+            string imagen = "https://cadenaser00.epimg.net/ser/imagenes/2019/05/23/television/1558591913_020782_1558595107_noticia_normal.jpg";
+            /*using (var webClient = new WebClient())
+            {
+                byte[] imageBytes = webClient.DownloadData(imagen);
+                Stream stream = new MemoryStream(imageBytes);
+                this.pictureBox1.Image = Image.FromStream(stream);
+            }
+            this.pictureBox1.ImageLocation = imagen;*/
+            string imagen2 = @"C:\Users\vPlay\Downloads\image.png";
+            byte[] byteImagen = HelperMascotas.StreamFile(imagen2);
+            this.pictureBox1.Image = Image.FromStream(HelperMascotas.DevuelveImagen(byteImagen));
             // mascota.Image = Image.FromFile(@"C: \Users\Alumnos MCSD Mañana\Downloads\air.jpg");
-            this.pictureBox1.Image = Image.FromStream(HelperMascotas.DevuelveImagen(byteImagen)); ;
             this.coleccionMascotas.Add(mascota);
             this.name.Text = "";
             this.raza.Text = "";
